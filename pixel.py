@@ -10,16 +10,13 @@ def converter_e_contar_pixels(caminho_entrada, caminho_saida):
 
             img_mono.save(caminho_saida)
             print(f"Imagem convertida com sucesso e salva em: {caminho_saida}")
-
             print("\n--- Análise da Nova Imagem Monocromática ---")
 
-            # Get pixel data directly from the converted image object in memory
+            # Todos os valores de pixel encontrado na imagem 
             pixels = list(img_mono.getdata())
 
-            # Calculate total pixels
+            # Calcula o total pixels
             total_pixels = len(pixels)
-            
-
 
             white_pixel_value = 255
             white_pixel_count = pixels.count(white_pixel_value)
@@ -38,5 +35,5 @@ def converter_e_contar_pixels(caminho_entrada, caminho_saida):
 if __name__ == "__main__":
 
     caminho_da_imagem_original = 'imagem.tif' 
-    #caminho_da_imagem_convertida = 'resultado_monocromatico.png'
-    #converter_e_contar_pixels(caminho_da_imagem_original, caminho_da_imagem_convertida)
+    caminho_da_imagem_convertida = 'resultado_monocromatico.png'
+    converter_e_contar_pixels(caminho_da_imagem_original, caminho_da_imagem_convertida)
